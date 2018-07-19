@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/item_app_icon"
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_plan"
+        android:layout_weight="2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_app_text"
+        android:textSize="@dimen/text_size_micro"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="签到"
+        android:src="@mipmap/ic_plan"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+
+
+</LinearLayout>

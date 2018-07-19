@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@android:color/holo_blue_light"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/ict_back"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="{fa-angle-left}"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="我的足迹"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
+
+            <com.joanzapata.iconify.widget.IconTextView
+                android:id="@+id/ic_delete"
+                android:text="{fa-trash}"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:background="@color/white"
+        android:id="@+id/ryc_footer"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_gravity="bottom"
+        android:gravity="right|bottom"
+        android:id="@+id/ll_delete"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:id="@+id/tv_delete"
+            android:gravity="center"
+            android:layout_gravity="right"
+            android:text="删除"
+            android:background="@color/red"
+            android:layout_width="100dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

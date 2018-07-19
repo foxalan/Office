@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:paddingTop="10dp"
+        android:background="@android:color/holo_blue_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentInsetStart="0dp">
+        
+        <com.joanzapata.iconify.widget.IconTextView
+            android:id="@+id/iv_back"
+            android:textSize="28sp"
+            android:textColor="@android:color/white"
+            android:text="{fa-angle-left}"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            tools:ignore="HardcodedText"
+            android:layout_marginStart="20dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:textColor="@android:color/white"
+            android:id="@+id/tv_subject_type"
+            android:text="基础"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:visibility="gone"
+        android:background="@android:color/holo_blue_light"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/cb_subject_banner"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ryc_subject_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+
+</LinearLayout>

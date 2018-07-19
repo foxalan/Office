@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:paddingTop="15dp"
+        android:background="@android:color/holo_blue_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentInsetStart="0dp">
+
+        <com.joanzapata.iconify.widget.IconTextView
+            android:textColor="@color/white"
+            android:text="{fa-angle-left}"
+            android:layout_marginLeft="10dp"
+            android:layout_width="@dimen/default_toolbar_width"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/default_toolbar_text_size"
+            tools:ignore="HardcodedText"
+            android:layout_marginStart="10dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:textColor="@color/white"
+            android:textSize="@dimen/default_toolbar_text_size"
+            android:text="体验课"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="HardcodedText" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/ryc_experience_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>
