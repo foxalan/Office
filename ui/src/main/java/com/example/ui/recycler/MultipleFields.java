@@ -34,4 +34,9 @@ public enum MultipleFields {
     APP_GRID_IMG,
     APP_GRID_TEXT,
 
+
+    APP_SIGN_EVENT_TYPE,
+    APP_SIGN_EVENT_TIME,
+    APP_SIGN_EVENT_STATE,
+
 }

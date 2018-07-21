@@ -17,6 +17,7 @@ public class AccountManager {
         USER_SIGN,
         USER_TYPE,
         USER_PSD,
+        SING_STATE,
     }
 
     /**
@@ -71,6 +72,14 @@ public class AccountManager {
 
     public static String getUserType(){
         return LattePreference.getUserType(SignTag.USER_TYPE.name());
+    }
+
+    public static void setSignEventState(String state){
+        LattePreference.setUserSignState(SignTag.SING_STATE.name(),state);
+    }
+
+    public static String getSignEventState(){
+        return LattePreference.getUserSignState(SignTag.SING_STATE.name());
     }
 
 

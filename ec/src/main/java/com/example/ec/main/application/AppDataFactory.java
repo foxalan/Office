@@ -34,7 +34,7 @@ public class AppDataFactory {
         ArrayList<AppBean> appBeanList = new ArrayList<>();
 
         for (int i = 0;i<personalIds.length;i++){
-            AppBean appBean = new AppBean(i,personalIds[i],texts[i]);
+            AppBean appBean = new AppBean(i+7,personalIds[i],texts[i]);
             appBeanList.add(appBean);
         }
         return appBeanList;

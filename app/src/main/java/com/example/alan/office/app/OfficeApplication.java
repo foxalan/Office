@@ -2,6 +2,7 @@ package com.example.alan.office.app;
 
 import android.app.Application;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.example.alan.office.R;
 import com.example.core.app.Latte;
 import com.example.core.bluetooth.AppInfo;
@@ -40,6 +41,8 @@ public class OfficeApplication extends Application {
                 //添加Cookie同步拦截器
                 .withWebHost("https://www.baidu.com/")
                 .configure();
+
+        SDKInitializer.initialize(this);
 
 
     }

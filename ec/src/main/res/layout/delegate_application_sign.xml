@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:paddingTop="10dp"
+        android:background="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/default_toolbar_padding"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:textSize="@dimen/default_toolbar_text_size"
+                android:text="考勤"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/mv_location"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.baidu.mapapi.map.MapView>
+
+        <android.support.v7.widget.AppCompatImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+    
+
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/ryc_sign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+        <com.example.ui.widget.TimerTextView
+            android:id="@+id/timer_sign"
+            android:background="@drawable/bg_sign_timer"
+            android:layout_marginBottom="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="80dp"
+            android:layout_height="80dp">
+
+        </com.example.ui.widget.TimerTextView>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -126,4 +126,11 @@ public final class LattePreference {
         return getAppPreference().getString(key, "");
     }
 
+    public static void setUserSignState(String name, String state) {
+        getAppPreference().edit().putString(name,state).apply();
+    }
+
+    public static String getUserSignState(String key){
+        return getAppPreference().getString(key,"");
+    }
 }

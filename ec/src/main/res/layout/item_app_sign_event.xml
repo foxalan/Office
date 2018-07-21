@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:background="@drawable/bg_circle"
+        android:gravity="center"
+        android:text="15:15"
+        android:id="@+id/item_text_sign_event_time"
+        android:layout_centerVertical="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_tv_sign_time_event_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/item_text_sign_event_time"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/item_text_sign_event_time"
+        android:padding="@dimen/default_padding"
+        android:textSize="@dimen/text_size_medium"
+        android:text="签到"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_tv_sign_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/item_tv_sign_time_event_type"
+        android:layout_alignBottom="@+id/item_tv_sign_time_event_type"
+        android:layout_toEndOf="@+id/item_tv_sign_time_event_type"
+        android:padding="@dimen/default_padding"
+        android:text="迟到"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_size_micro"
+        tools:ignore="HardcodedText" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_tv_sign_time_event_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_tv_sign_time_event_type"
+        android:layout_toRightOf="@id/item_text_sign_event_time"
+        android:layout_marginStart="10dp"
+        android:padding="@dimen/default_padding"
+        android:textSize="@dimen/text_size_micro"
+        android:text="移动端"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/item_tv_sign_time_event_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_tv_sign_time_event_type"
+        android:layout_toRightOf="@id/item_tv_sign_time_event_phone"
+        android:padding="@dimen/default_padding"
+        android:textSize="@dimen/text_size_micro"
+        android:text="湖北省武汉市"
+        android:textColor="@color/black"
+        tools:ignore="HardcodedText" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:textColor="@color/text_blue"
+        android:text="消迟到"
+        android:textSize="@dimen/text_size_small"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/item_tv_sign_time_event_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+</RelativeLayout>

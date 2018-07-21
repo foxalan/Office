@@ -8,9 +8,13 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+import com.chad.library.adapter.base.BaseQuickAdapter;
+import com.chad.library.adapter.base.listener.SimpleClickListener;
 import com.example.core.delegate.bottom.BottomItemDelegate;
 import com.example.ec.R;
+import com.example.ec.main.application.sign.AppSignDelegate;
 import com.example.ui.recycler.BaseDecoration;
+import com.example.ui.recycler.MultipleFields;
 import com.example.ui.recycler.MultipleItemEntity;
 
 import java.util.ArrayList;
@@ -53,9 +57,41 @@ public class ApplicationDelegate extends BottomItemDelegate {
         final GridLayoutManager manager = new GridLayoutManager(getContext(), 4);
         mRycApp.setLayoutManager(manager);
         mRycApp.addItemDecoration
-                    (BaseDecoration.create(ContextCompat.getColor(getContext(), R.color.app_background), 2));
+                (BaseDecoration.create(ContextCompat.getColor(getContext(), R.color.app_background), 2));
 
         mRycApp.setAdapter(appAdapter);
-        //mRycApp.addOnItemTouchListener();
+        mRycApp.addOnItemTouchListener(new SimpleClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+                final MultipleItemEntity entity = (MultipleItemEntity) adapter.getData().get(position);
+                int type = entity.getField(MultipleFields.ITEM_TYPE);
+                if (type == ApplicationType.TYPE_GRID) {
+
+                    int id = entity.getField(MultipleFields.ID);
+                    switch (id) {
+                        case 0:
+                            getParentDelegate().getSupportDelegate().start(new AppSignDelegate());
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+
+            @Override
+            public void onItemLongClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+
+            @Override
+            public void onItemChildClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+
+            @Override
+            public void onItemChildLongClick(BaseQuickAdapter adapter, View view, int position) {
+
+            }
+        });
     }
 }

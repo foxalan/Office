@@ -12,5 +12,7 @@ public class ApplicationType {
     public static final int TYPE_BANNER = 101;
     public static final int TYPE_TEXT = 102;
     public static final int TYPE_GRID=103;
+    public static final int TYPE_SIGN_TIME = 104;
+    public static final int TYPE_SIGN_EVENT=105;
 
 }

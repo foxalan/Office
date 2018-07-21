@@ -49,8 +49,6 @@ public class MapDelegate extends LatteDelegate {
     private BaiduMap mBaiduMap = null;
 
     private LocationClient mLocationClient;
-//    private LatteLocationListener locationListener;
-
     private List<TrainBean> trainBeanList;
 
     private IconTextView mItvMapBack;
@@ -88,13 +86,9 @@ public class MapDelegate extends LatteDelegate {
 
     private void initViews(View rootView) {
         mMapView = rootView.findViewById(R.id.id_mapView);
-
         mItvMapBack = rootView.findViewById(R.id.tv_map_back);
-
-
         mLvSearch = rootView.findViewById(R.id.lv_map_search);
         mEtMapSearch = rootView.findViewById(R.id.et_map_search_view);
-
         mBaiduMap = mMapView.getMap();
     }
 

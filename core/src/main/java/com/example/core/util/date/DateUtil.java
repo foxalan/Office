@@ -1,9 +1,11 @@
 package com.example.core.util.date;
 
+import android.annotation.SuppressLint;
 import android.text.TextUtils;
 
 import com.blankj.utilcode.util.StringUtils;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -36,10 +38,11 @@ public class DateUtil {
 
     public static final long ONE_DAY = 1000 * 60 * 60 * 24;
 
-    //判断选择的日期是否是本周（分从周日开始和从周一开始两种方式）
+    /**
+     *判断选择的日期是否是本周（分从周日开始和从周一开始两种方式）
+     */
     public static boolean isThisWeek(Date time) {
-//        //周日开始计算
-//      Calendar calendar = Calendar.getInstance();
+
 
         //周一开始计算
         Calendar calendar = Calendar.getInstance(Locale.CHINA);
@@ -87,9 +90,11 @@ public class DateUtil {
     private static boolean isThisTime(Date date, String pattern) {
         SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 
-        String param = sdf.format(date);//参数时间
+        String param = sdf.format(date);
+        //参数时间
 
-        String now = sdf.format(new Date());//当前时间
+        String now = sdf.format(new Date());
+        //当前时间
 
         if (param.equals(now)) {
             return true;
@@ -102,7 +107,8 @@ public class DateUtil {
      */
     public static int getDayOfMonth(int year, int month) {
         Calendar c = Calendar.getInstance();
-        c.set(year, month, 0); //输入类型为int类型
+        c.set(year, month, 0);
+        //输入类型为int类型
         return c.get(Calendar.DAY_OF_MONTH);
     }
 
@@ -175,6 +181,28 @@ public class DateUtil {
         return weekDays[w];
     }
 
+    public static String getWeekOfDate(){
+        return getWeekOfDate(getCurrentDate());
+    }
+
+    public static Date getCurrentDate() {
+        long time = System.currentTimeMillis();
+        Date date = new Date(time);
+        return date;
+    }
+
+    public static String getCurretnDate(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        return format.format(getCurrentDate());
+    }
+
+    public static String getCurrentTime() {
+        //     SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 HH时mm分ss秒");
+        @SuppressLint("SimpleDateFormat")
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        return format.format(getCurrentDate());
+    }
+
 
     /**
      * 将日期格式的字符串转换为长整型
@@ -213,6 +241,60 @@ public class DateUtil {
         }
         return "";
 
+    }
+
+    /**
+     * 是否迟到
+     * @param date2
+     * @return
+     */
+    public static boolean isArriveLate(String date2){
+        //格式化时间
+        SimpleDateFormat CurrentTime= new SimpleDateFormat("HH:mm");
+        String date1="09:00";
+        try {
+            Date beginTime=CurrentTime.parse(date1);
+            Date endTime=CurrentTime.parse(date2);
+            //判断是否大于两天
+            if(beginTime.getTime()>endTime.getTime()) {
+                return false;
+            }else{
+                return true;
+            }
+
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    /**
+     * 是否早退
+     * @param date2
+     * @return
+     */
+    public static boolean isLeaveEarly(String date2){
+        //格式化时间
+        SimpleDateFormat CurrentTime= new SimpleDateFormat("HH:mm");
+        String date1="18:00";
+        try {
+            Date beginTime=CurrentTime.parse(date1);
+            Date endTime=CurrentTime.parse(date2);
+            //判断是否大于两天
+            if(beginTime.getTime()>endTime.getTime()) {
+                return true;
+            }else{
+                return false;
+            }
+
+        } catch (ParseException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return false;
     }
 
 }
